@@ -1,5 +1,11 @@
 const express=require('express');
 const app=express();
+const bodyParser = require('body-parser');
+
+// USED TO PARSE REQUEST BODY
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 const weatherRoute=require('./routes/weather');
 const apiRouter = require('./routes/apis');
 
