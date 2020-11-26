@@ -1,10 +1,19 @@
-const express=require('express');
-const app=express();
+const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 // USED TO PARSE REQUEST BODY
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// mongoose.connect("DATABASE URL",{
+//         useNewUrlParser: true,
+//         useCreateIndex: true,
+//         useUnifiedTopology: true
+//     });
+
+console.log("connected to database")
 
 const weatherRoute=require('./routes/weather');
 const apiRouter = require('./routes/apis');
